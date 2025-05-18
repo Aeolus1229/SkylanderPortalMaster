@@ -2,7 +2,7 @@
 ---
 Fork of https://github.com/SigmaDolphin/SkylanderEditor
 
-Much more cohesive and feature rich - this is for specific use cases.
+Which is much more cohesive and feature rich - this is for specific use cases.
 
 ## Uses
  - Simple Portal reading tool
