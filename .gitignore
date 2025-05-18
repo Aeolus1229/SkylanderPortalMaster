@@ -1,0 +1,50 @@
+
+## Build results
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vsp
+*.psess
+
+# MonoDevelop
+*.pidb
+*.userprefs
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code settings
+.vscode/
+
+# Backup and temporary files
+*~ 
+*.tmp
+*.bak
+
+# NuGet
+*.nupkg
+packages/
+*.snupkg
+
+# Ignore test results
+TestResults/
+*.TestResults
+
+# Ignore publish outputs
+publish/
+out/
+
+# Include Releases and Docu folders (remove ignore if inherited)
+!Releases/
+!Docu/
