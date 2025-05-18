@@ -135,11 +135,11 @@ Partial Class AboutBox1
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents OKButton As System.Windows.Forms.Button
-    Friend WithEvents LabelCompanyName As System.Windows.Forms.Label
-    Friend WithEvents LabelVersion As System.Windows.Forms.Label
-    Friend WithEvents LabelProductName As System.Windows.Forms.Label
-    Friend WithEvents LogoPictureBox As System.Windows.Forms.PictureBox
-    Friend WithEvents TableLayoutPanel As System.Windows.Forms.TableLayoutPanel
+    Public WithEvents OKButton As System.Windows.Forms.Button
+    Public WithEvents LabelCompanyName As System.Windows.Forms.Label
+    Public WithEvents LabelVersion As System.Windows.Forms.Label
+    Public WithEvents LabelProductName As System.Windows.Forms.Label
+    Public WithEvents LogoPictureBox As System.Windows.Forms.PictureBox
+    Public WithEvents TableLayoutPanel As System.Windows.Forms.TableLayoutPanel
 
 End Class

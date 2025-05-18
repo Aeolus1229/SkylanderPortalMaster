@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("SkylanderEditor")> 
-<Assembly: AssemblyDescription("Programmed in VB.NET by a green dragon")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("SkylanderEditor")> 
+<Assembly: AssemblyTitle("SkylanderPortalMaster")>
+<Assembly: AssemblyDescription("Good code from a Green Dragon and copilot (blame me for being lazy, but not for weird code)")>
+<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyProduct("SkylanderPortalMaster")>
 <Assembly: AssemblyCopyright("")> 
 <Assembly: AssemblyTrademark("")> 
 

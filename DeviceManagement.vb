@@ -6,13 +6,13 @@ Imports System.Runtime.InteropServices
 ''' For detecting devices and receiving device notifications.
 ''' </summary>
 
-Partial Friend NotInheritable Class DeviceManagement
+Partial Public NotInheritable Class DeviceManagement
 
-    ' Used in error messages:
+	' Used in error messages:
 
-    Const MODULE_NAME As String = "DeviceManagement"
+	Const MODULE_NAME As String = "DeviceManagement"
 
-    ' For viewing results of API calls in debug.write statements:
+	' For viewing results of API calls in debug.write statements:
 
 	''' <summary>
 	''' Compares two device path names. Used to find out if the device name 
@@ -29,8 +29,8 @@ Partial Friend NotInheritable Class DeviceManagement
 	''' True if the names match, False if not.
 	''' </returns>
 	''' 
-	Friend Function DeviceNameMatch _
-	 (ByVal m As Message, _
+	Public Function DeviceNameMatch _
+	 (ByVal m As Message,
 	 ByVal mydevicePathName As String) _
 	 As Boolean
 
@@ -101,8 +101,8 @@ Partial Friend NotInheritable Class DeviceManagement
 	'''  True if a device is found, False if not. 
 	''' </returns>
 
-	Friend Function FindDeviceFromGuid _
-	 (ByVal myGuid As System.Guid, _
+	Public Function FindDeviceFromGuid _
+	 (ByVal myGuid As System.Guid,
 	 ByRef devicePathName() As String) _
 	 As Boolean
 
@@ -113,7 +113,7 @@ Partial Friend NotInheritable Class DeviceManagement
 		Dim lastDevice As Boolean
 		Dim memberIndex As Int32
 		Dim myDeviceInterfaceData As SP_DEVICE_INTERFACE_DATA
-        Dim pdevicePathName As IntPtr
+		Dim pdevicePathName As IntPtr
 		Dim success As Boolean
 
 		Try
@@ -133,13 +133,13 @@ Partial Friend NotInheritable Class DeviceManagement
 
 			' Returns
 			' Handle to a device information set for the devices.
-            '*
+			'*
 
-            deviceInfoSet = SetupDiGetClassDevs _
-             (myGuid, _
-             IntPtr.Zero, _
-             IntPtr.Zero, _
-             DIGCF_PRESENT Or DIGCF_DEVICEINTERFACE)
+			deviceInfoSet = SetupDiGetClassDevs _
+			 (myGuid,
+			 IntPtr.Zero,
+			 IntPtr.Zero,
+			 DIGCF_PRESENT Or DIGCF_DEVICEINTERFACE)
 
 			deviceFound = False
 			memberIndex = 0
@@ -176,10 +176,10 @@ Partial Friend NotInheritable Class DeviceManagement
 				'***
 
 				success = SetupDiEnumDeviceInterfaces _
-				 (deviceInfoSet, _
-				 IntPtr.Zero, _
-				 myGuid, _
-				 memberIndex, _
+				 (deviceInfoSet,
+				 IntPtr.Zero,
+				 myGuid,
+				 memberIndex,
 				 myDeviceInterfaceData)
 
 				'Find out if a device information set was retrieved.
@@ -215,11 +215,11 @@ Partial Friend NotInheritable Class DeviceManagement
 					'***
 
 					SetupDiGetDeviceInterfaceDetail _
-					 (deviceInfoSet, _
-					 myDeviceInterfaceData, _
-					 IntPtr.Zero, _
-					 0, _
-					 bufferSize, _
+					 (deviceInfoSet,
+					 myDeviceInterfaceData,
+					 IntPtr.Zero,
+					 0,
+					 bufferSize,
 					 IntPtr.Zero)
 
 					'Allocate memory for the SP_DEVICE_INTERFACE_DETAIL_DATA structure using the returned buffer size.
@@ -235,11 +235,11 @@ Partial Friend NotInheritable Class DeviceManagement
 					'and the returned required buffer size.
 
 					success = SetupDiGetDeviceInterfaceDetail _
-					 (deviceInfoSet, _
-					 myDeviceInterfaceData, _
-					 detailDataBuffer, _
-					 bufferSize, _
-					 bufferSize, _
+					 (deviceInfoSet,
+					 myDeviceInterfaceData,
+					 detailDataBuffer,
+					 bufferSize,
+					 bufferSize,
 					 IntPtr.Zero)
 
 					'Skip over cbsize (4 bytes) to get the address of the devicePathName.
@@ -249,7 +249,7 @@ Partial Friend NotInheritable Class DeviceManagement
 					'Get the String containing the devicePathName.
 
 					devicePathName(memberIndex) = Marshal.PtrToStringAuto(pdevicePathName)
-					
+
 					deviceFound = True
 
 				End If
@@ -304,16 +304,16 @@ Partial Friend NotInheritable Class DeviceManagement
 	''' True on success.
 	''' </returns>
 	''' 
-	Friend Function RegisterForDeviceNotifications _
-	 (ByVal devicePathName As String, _
-	 ByVal formHandle As IntPtr, _
-	 ByVal classGuid As Guid, _
+	Public Function RegisterForDeviceNotifications _
+	 (ByVal devicePathName As String,
+	 ByVal formHandle As IntPtr,
+	 ByVal classGuid As Guid,
 	 ByRef deviceNotificationHandle As IntPtr) _
 	 As Boolean
 
 		'A DEV_BROADCAST_DEVICEINTERFACE header holds information about the request.
 
-		Dim devBroadcastDeviceInterface As DEV_BROADCAST_DEVICEINTERFACE = _
+		Dim devBroadcastDeviceInterface As DEV_BROADCAST_DEVICEINTERFACE =
 		 New DEV_BROADCAST_DEVICEINTERFACE()
 		Dim devBroadcastDeviceInterfaceBuffer As IntPtr
 		Dim size As Int32
@@ -364,8 +364,8 @@ Partial Friend NotInheritable Class DeviceManagement
 			'***
 
 			deviceNotificationHandle = RegisterDeviceNotification _
-			 (formHandle, _
-			 devBroadcastDeviceInterfaceBuffer, _
+			 (formHandle,
+			 devBroadcastDeviceInterfaceBuffer,
 			 DEVICE_NOTIFY_WINDOW_HANDLE)
 
 			'Marshal data from the unmanaged block DevBroadcastDeviceInterfaceBuffer to
@@ -373,7 +373,7 @@ Partial Friend NotInheritable Class DeviceManagement
 
 			Marshal.PtrToStructure(devBroadcastDeviceInterfaceBuffer, devBroadcastDeviceInterface)
 
-			
+
 
 			If (deviceNotificationHandle.ToInt32 = IntPtr.Zero.ToInt32) Then
 				Return False
@@ -402,7 +402,7 @@ Partial Friend NotInheritable Class DeviceManagement
 	''' <param name="deviceNotificationHandle"> handle returned previously by
 	''' RegisterDeviceNotification. </param>
 
-	Friend Sub StopReceivingDeviceNotifications _
+	Public Sub StopReceivingDeviceNotifications _
 	 (ByVal deviceNotificationHandle As IntPtr)
 
 		Try

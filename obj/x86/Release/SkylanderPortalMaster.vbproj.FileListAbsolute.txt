@@ -1,0 +1,12 @@
+C:\Users\sagek\Documents\GitHub\SkylanderEditor\bin\Release\SkylanderDB.xml
+C:\Users\sagek\Documents\GitHub\SkylanderEditor\bin\Release\SkylanderPortalMaster.exe
+C:\Users\sagek\Documents\GitHub\SkylanderEditor\bin\Release\SkylanderPortalMaster.pdb
+C:\Users\sagek\Documents\GitHub\SkylanderEditor\bin\Release\SkylanderPortalMaster.xml
+C:\Users\sagek\Documents\GitHub\SkylanderEditor\obj\x86\Release\SkylanderPortalMaster.vbproj.AssemblyReference.cache
+C:\Users\sagek\Documents\GitHub\SkylanderEditor\obj\x86\Release\SkylanderPortalMaster.AboutBox1.resources
+C:\Users\sagek\Documents\GitHub\SkylanderEditor\obj\x86\Release\SkylanderPortalMaster.Resources.resources
+C:\Users\sagek\Documents\GitHub\SkylanderEditor\obj\x86\Release\SkylanderPortalMaster.vbproj.GenerateResource.cache
+C:\Users\sagek\Documents\GitHub\SkylanderEditor\obj\x86\Release\SkylanderPortalMaster.vbproj.CoreCompileInputs.cache
+C:\Users\sagek\Documents\GitHub\SkylanderEditor\obj\x86\Release\SkylanderPortalMaster.exe
+C:\Users\sagek\Documents\GitHub\SkylanderEditor\obj\x86\Release\SkylanderPortalMaster.xml
+C:\Users\sagek\Documents\GitHub\SkylanderEditor\obj\x86\Release\SkylanderPortalMaster.pdb
